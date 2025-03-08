@@ -12,15 +12,37 @@ body {
 
 .container {
   text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .flower-animation {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYSURBVDhPY2AYBaOAAQ0wMjAw/AcRjABlAAB9ZgD1Z5uF4gAAAABJRU5ErkJggg==') repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flower {
+  width: 50px;
+  height: 50px;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYSURBVDhPY2AYBaOAAQ0wMjAw/AcRjABlAAB9ZgD1Z5uF4gAAAABJRU5ErkJggg==');
   image-rendering: pixelated;
-  animation: flowerGrow 5s ease-in-out forwards;
+  animation: float 3s ease-in-out infinite;
+}
+
+.flower:nth-child(1) { animation-delay: 0s; }
+.flower:nth-child(2) { animation-delay: 1s; }
+.flower:nth-child(3) { animation-delay: 2s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
 .message {
@@ -45,9 +67,4 @@ body {
   width: 0;
   height: 0;
   overflow: hidden;
-}
-
-@keyframes flowerGrow {
-  0% { transform: scale(0); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
 }
