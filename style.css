@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ff6f61, #6b5b95, #000);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Pacifico', cursive;
+}
+
+.container {
+  text-align: center;
+}
+
+.flower-animation {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYSURBVDhPY2AYBaOAAQ0wMjAw/AcRjABlAAB9ZgD1Z5uF4gAAAABJRU5ErkJggg==') repeat;
+  image-rendering: pixelated;
+  animation: flowerGrow 5s ease-in-out forwards;
+}
+
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.youtube-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+@keyframes flowerGrow {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
